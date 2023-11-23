@@ -14,12 +14,10 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-    - name: Setup Chrome
-      uses: browser-actions/setup-chrome@v1.3.0
+    - name: Install Chrome
+      uses: logikal-io/install-chrome@v1.0.1
       with:
-        chrome-version: stable
-    - name: Check Chrome/Chromedriver compatibility
-      uses: jamesmortensen/chromedriver-matcher-action@v1.0.1
+        version: '119.0.6045.159'
     - name: Pull latest postgres docker image
       run: docker pull postgres:latest
     - name: Build and test with Maven
