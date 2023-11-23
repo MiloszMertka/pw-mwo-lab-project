@@ -20,6 +20,8 @@ jobs:
         chrome-version: stable
     - name: Setup chromedriver
       uses: nanasess/setup-chromedriver@v2.2.0
+    - name: Check Chrome/Chromedriver compatibility
+      uses: jamesmortensen/chromedriver-matcher-action@v1.0.1
     - name: Pull latest postgres docker image
       run: docker pull postgres:latest
     - name: Build and test with Maven
