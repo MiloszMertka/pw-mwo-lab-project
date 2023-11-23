@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista Samochodów</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row align-items-center mt-5">
+        <div class="col">
+            <h1>Lista Silników</h1>
+        </div>
+        <div class="col d-flex justify-content-end">
+            <a class="btn btn-secondary" th:href="@{/}">Powrót</a>
+            <a class="btn btn-success ms-3" href="/engines/create">Dodaj nowy silnik</a>
+        </div>
+    </div>
+
+    <table class="table mt-3">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nazwa</th>
+            <th>Moc [KM]</th>
+            <th>Akcje</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="engine : ${engines}">
+            <td th:text="${engine.id}"></td>
+            <td th:text="${engine.name}"></td>
+            <td th:text="${engine.horsePower}"></td>
+            <td>
+                <div class="d-flex">
+                    <a class="btn btn-primary me-3" th:href="@{'/engines/edit/' + ${engine.id}}">Edytuj</a>
+                    <form th:action="'/engines/delete/' + ${engine.id}" th:method="DELETE">
+                        <button class="btn btn-danger" type="submit">Usuń</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

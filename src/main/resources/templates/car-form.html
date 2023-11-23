@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Samochód</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">Samochód</h1>
+    <form th:action="@{'/cars/' + ${carForm.id == null ? 'create' : 'update/' + carForm.id}}"
+          th:method="${carForm.id == null ? 'POST' : 'PUT'}"
+          th:object="${carForm}">
+        <div class="mb-3">
+            <label class="form-label" for="name">Nazwa</label>
+            <input class="form-control" id="name" th:field="*{name}" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="color">Kolor</label>
+            <input class="form-control" id="color" th:field="*{color}" type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="engineId">Silnik</label>
+            <select class="form-select" id="engineId" th:field="*{engineId}">
+                <option selected value="">Wybierz silnik</option>
+                <option th:each="engine : ${engines}" th:text="${engine.name}"
+                        th:value="${engine.id}"></option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="equipmentOptionsIds">Opcje wyposażenia:</label>
+            <select class="form-select" id="equipmentOptionsIds" multiple style="min-height: 450px"
+                    th:field="*{equipmentOptionsIds}">
+                <option th:each="equipmentOption : ${equipmentOptions}"
+                        th:text="${equipmentOption.name}"
+                        th:value="${equipmentOption.id}"></option>
+            </select>
+        </div>
+        <div class="d-flex justify-content-end">
+            <a class="btn btn-secondary" th:href="@{/cars}">Anuluj</a>
+            <button class="btn btn-primary ms-3" type="submit">Zapisz</button>
+        </div>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
