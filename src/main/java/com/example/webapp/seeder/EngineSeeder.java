@@ -18,7 +18,7 @@ public class EngineSeeder implements Seeder {
 
     @Override
     public void seed(int objectsToSeed) {
-        final Set<Engine> engines = HashSet.newHashSet(objectsToSeed);
+        final Set<Engine> engines = new HashSet<>();
         for (var i = 0; i < objectsToSeed; i++) {
             final var engine = createEngine();
             if (engines.contains(engine)) {

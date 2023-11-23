@@ -18,7 +18,7 @@ public class EquipmentOptionSeeder implements Seeder {
 
     @Override
     public void seed(int objectsToSeed) {
-        final Set<EquipmentOption> equipmentOptions = HashSet.newHashSet(objectsToSeed);
+        final Set<EquipmentOption> equipmentOptions = new HashSet<>();
         for (var i = 0; i < objectsToSeed; i++) {
             final var equipmentOption = createEquipmentOption();
             if (equipmentOptions.contains(equipmentOption)) {

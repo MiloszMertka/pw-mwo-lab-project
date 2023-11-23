@@ -25,7 +25,7 @@ public class CarSeeder implements Seeder {
 
     @Override
     public void seed(int objectsToSeed) {
-        final Set<Car> cars = HashSet.newHashSet(objectsToSeed);
+        final Set<Car> cars = new HashSet<>();
         for (int i = 0; i < objectsToSeed; i++) {
             final var car = createCar();
             if (cars.contains(car)) {
@@ -54,7 +54,7 @@ public class CarSeeder implements Seeder {
 
     private List<EquipmentOption> getListOfRandomEquipmentOptions() {
         final var listSize = faker.number().numberBetween(0, 3);
-        final Set<EquipmentOption> equipmentOptions = HashSet.newHashSet(listSize);
+        final Set<EquipmentOption> equipmentOptions = new HashSet<>();
         for (var i = 0; i < listSize; i++) {
             final var equipmentOption = getRandomEquipmentOption();
             equipmentOptions.add(equipmentOption);
