@@ -14,6 +14,7 @@ public class SeleniumConfig {
         final var options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
         this.driver = new ChromeDriver(options);
     }
 
