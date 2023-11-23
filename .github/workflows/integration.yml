@@ -14,6 +14,8 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+    - name: Setup Chrome
+      uses: browser-actions/setup-chrome@v1.3.0
     - name: Setup chromedriver
       uses: nanasess/setup-chromedriver@v2.2.0
     - name: Pull latest postgres docker image
