@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ActiveProfiles("test")
 public class EngineTests {
 
-    private static final String APP_URL = "http://localhost";
+    private static final String APP_URL = "http://localhost:8080";
     private WebDriver driver;
 
     @BeforeEach

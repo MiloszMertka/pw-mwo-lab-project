@@ -15,7 +15,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @ActiveProfiles("test")
 public class EquipmentOptionTests {
 
-    private static final String APP_URL = "http://localhost";
+    private static final String APP_URL = "http://localhost:8080";
     private final WebDriver driver = new SeleniumConfig().getDriver();
 
     @BeforeEach
