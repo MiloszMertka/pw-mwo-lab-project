@@ -15,5 +15,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Setup chromedriver
+      uses: nanasess/setup-chromedriver@v2.2.0
     - name: Build and test with Maven
       run: mvn -B package --file pom.xml
