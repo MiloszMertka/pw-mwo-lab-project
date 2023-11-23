@@ -16,5 +16,7 @@ jobs:
         distribution: 'temurin'
     - name: Setup chromedriver
       uses: nanasess/setup-chromedriver@v2.2.0
+    - name: Pull latest postgres docker image
+      run: docker pull postgres:latest
     - name: Build and test with Maven
       run: mvn clean test
