@@ -169,3 +169,8 @@ jobs:
 ## Działanie skonfigurowanego pipeline'u CI
 
 Przykład działania pipeline'u CI w przypadku niepowodzenia testów zaprezentowano w filmie **presentation.mp4**.
+
+
+https://github.com/MiloszMertka/pw-mwo-lab-project/assets/54269558/2148461f-6fae-445a-95ef-daeb6d706913
+
+
