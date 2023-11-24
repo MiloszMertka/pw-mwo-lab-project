@@ -87,7 +87,7 @@ public class CarTests {
         final var deleteCarButton = driver.findElement(By.xpath("//td[text()='" + carName + "']/following-sibling::td/div/form/button[text()='Usuń']"));
         deleteCarButton.click();
         final var carElement = driver.findElements(By.xpath("//*[contains(text(),'" + carName + "')]"));
-        assertThat(carElement.isEmpty()).isFalse(); // intentionally failing test
+        assertThat(carElement.isEmpty()).isFalse(); // intentionally failing test for presentation purposes
     }
 
 }
